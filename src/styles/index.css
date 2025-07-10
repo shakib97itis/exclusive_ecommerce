@@ -1,1 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import "tailwindcss";
+
+@theme {
+  /* ========== FONTS ========== */
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+  --font-tertiary: "Roboto", sans-serif;
+
+  /* ========== COLORS ========== */
+  /* PRIMARY COLORS */
+  --color-primary: #ec4444;
+  --color-primary-light: #e05e5e;
+  /* --color-primary-dark:  */
+
+  /* SECONDARY COLORS */
+  --color-secondary: #00ff65;
+  /* --color-secondary-light: ;*/
+  /* --color-secondary-dark: ; */
+
+  /* TERTIARY COLORS */
+  /* --color-tertiary: ; */
+  /* --color-tertiary-light: ; */
+  /* --color-tertiary-dark: ; */
+
+  /* ACCENT COLORS */
+  /* --color-accent: ; */
+  /* --color-accent-light: ; */
+  /* --color-accent-dark: ; */
+
+  /* NEUTRAL COLORS */
+  --color-neutral-000: #ffffff;
+  --color-neutral-100: #fdf9f2;
+  --color-neutral-200: #efefef;
+  --color-neutral-300: #d9d9d9;
+  --color-neutral-400: #c9c9c9;
+  --color-neutral-500: #9d9d9d;
+  --color-neutral-600: #6a6a6a;
+  --color-neutral-700: #5c5c5c;
+  --color-neutral-800: #252525;
+  --color-neutral-900: #000000;
+}
+
+@layer components {
+  /* === HEADINGS === */
+  .h1 {
+    /* 
+    font-family: var(--font-primary);
+    color: var(--color-neutral-900);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px; 
+    */
+    
+    @apply text-5xl font-bold leading-14 font-primary text-neutral-900;
+  }
+
+  .h2 {
+    /* 
+    font-family: var(--font-primary);
+    color: var(--color-neutral-900);
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 700; 
+    */
+    
+    @apply text-[40px] font-bold leading-12 font-primary text-neutral-900;
+  }
+
+  .h3 {
+    /* 
+    font-family: var(--font-primary);
+    color: var(--color-neutral-900);
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700; 
+    */
+    
+    @apply text-[32px] font-bold leading-10 font-primary text-neutral-900;
+  }
+
+  .h4 {
+    /* 
+    font-family: var(--font-primary);
+    color: var(--color-neutral-900);
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700; 
+    */
+    
+    @apply text-2xl font-bold leading-8 font-primary text-neutral-900;
+  }
+
+  .h5 {
+    /* 
+    font-family: var(--font-primary);
+    color: var(--color-neutral-900);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600; 
+    */
+    
+    @apply text-xl font-semibold leading-7 font-primary text-neutral-900;
+  }
+
+  .h6 {
+    /*
+    font-family: var(--font-primary);
+    color: var(--color-neutral-900);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600; 
+    */
+    
+    @apply text-lg font-semibold leading-6 font-primary text-neutral-900;
+  }
+
+  /* === BODY TEXT === */
+  .text-body {
+    @apply text-base leading-6 font-secondary text-neutral-900;
+
+    /* 
+    font-family: var(--font-secondary);
+    color: var(--color-neutral-900);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400; */
+  }
+
+  .text-small {
+    @apply text-sm leading-5 font-secondary text-neutral-900;
+
+    /* 
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400; 
+    font-family: var(--font-secondary);
+    color: var(--color-neutral-900);
+    */
+  }
+
+  .text-tiny {
+    @apply text-xs leading-4 font-secondary text-neutral-900;
+
+    /*
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--color-neutral-900);
+    font-family: var(--font-secondary);
+    */
+  }
+}
+
+body {
+  @apply text-base leading-6 font-secondary bg-neutral-100 text-neutral-900;
+}
