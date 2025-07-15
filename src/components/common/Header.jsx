@@ -1,15 +1,29 @@
-import React from "react";
+import { Link } from "react-router";
 
 const Header = () => {
   return (
-    <div className="container mx-auto bg-neutral-900 text-white flex justify-between">
-      <p className="flex-grow text-center">Exclusive E-Commerce</p>
-      <select className="" name="" id="">
-        <option value="">Select language</option>
-        <option value="english">English</option>
-        <option value="spanish">Spanish</option>
-        <option value="french">French</option>
-      </select>
+    <div className="bg-button text-text">
+      <div className="container flex justify-between">
+        <p className="title-14-regular text-text flex-grow py-[15px] text-center">
+          Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+          <Link to="/" className="title-14-semibold text-text ml-2 underline">
+            Shop Now
+          </Link>
+        </p>
+
+        <div className="flex py-1">
+          <select
+            id="language"
+            className="bg-text-2 cursor-pointer py-2.5 text-sm focus:outline-none"
+          >
+            <option defaultValue={true}>ENGLISH</option>
+            <option value="US">United States</option>
+            <option value="CA">Canada</option>
+            <option value="FR">France</option>
+            <option value="DE">Germany</option>
+          </select>
+        </div>
+      </div>
     </div>
   );
 };
