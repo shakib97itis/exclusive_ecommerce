@@ -3,7 +3,7 @@ import { Link } from "react-router";
 const Header = () => {
   return (
     <div className="bg-button text-text">
-      <div className="container flex justify-center md:justify-between">
+      <div className="main-container flex justify-center md:justify-between">
         <p className="title-14-regular text-text hidden flex-grow py-[15px] text-center md:block">
           Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
           <Link to="/" className="title-14-semibold text-text ml-2 underline">
