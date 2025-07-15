@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import Header from "../../components/common/Header";
+import Header from "../../components/header/Header";
 import NavBar from "../../components/navigation/NavBar";
 import CategoryNav from "../../components/navigation/CategoryNav";
 import HeroSlider from "../../components/heroSlider/HeroSlider";
