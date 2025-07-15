@@ -213,8 +213,8 @@
   }
 }
 
-@utility container {
-  @apply mx-auto px-3 sm:px-0;
+.main-container {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
 
 body {
@@ -222,5 +222,5 @@ body {
 }
 
 .slick-dots li.slick-active div {
-  @apply bg-button-2 border scale-125 border-primary;
+  @apply bg-button-2 border-primary scale-125 border;
 }
