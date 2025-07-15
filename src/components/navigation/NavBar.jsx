@@ -15,7 +15,7 @@ const navLinks = [
 const Navbar = () => {
   return (
     <nav className="md:border-button/30 relative md:border-b md:pt-12 md:pb-6">
-      <div className="container flex flex-wrap items-center justify-between py-4 md:py-0">
+      <div className="main-container flex flex-wrap items-center justify-between py-4 md:py-0">
         {/* LOGO */}
         <Link to="/" className="heading-24-bold text-text-2">
           Exclusive
@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex space-x-3 md:order-2 md:space-x-0">
           <div className="flex items-center gap-[20px]">
             {/* SEARCH BAR */}
-            <form className="hidden md:block">
+            <form className="hidden lg:block">
               <label
                 htmlFor="default-search"
                 className="sr-only mb-2 text-sm font-medium text-gray-900"
