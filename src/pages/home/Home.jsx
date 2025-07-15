@@ -11,7 +11,7 @@ const Home = () => {
       <NavBar />
       {/* HOME MAIN CONTENT LAYOUT */}
 
-      <div className="container grid grid-cols-12">
+      <div className="main-container grid grid-cols-12">
         {/* CATEGORIES NAV HOLDER */}
         <CategoryNav />
 
