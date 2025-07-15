@@ -10,7 +10,7 @@ const categoryNav = [
 
 const CategoryNav = () => {
   return (
-    <div className="border-r-text-2/30 col-span-2 border-r pt-10">
+    <div className="border-r-text-2/30 col-span-2 hidden border-r pt-10 lg:block">
       <ul className="space-y-3">
         {categoryNav.map((nav) => (
           <li key={nav.name} className="title-16-regular text-text-2">

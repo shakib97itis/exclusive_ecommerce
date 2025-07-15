@@ -37,16 +37,16 @@ const HeroSlider = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
-    customPaging: () => <div className=" h-3 w-3 rounded-full bg-primary" />,
+    customPaging: () => <div className="bg-primary h-3 w-3 rounded-full" />,
     appendDots: (dots) => (
-      <div style={{ bottom: "1px"}}>
+      <div style={{ bottom: "1px" }}>
         <ul className="flex items-center justify-center">{dots}</ul>
       </div>
     ),
   };
 
   return (
-    <div className="col-span-10 mx-auto w-full pt-10 ps-10">
+    <div className="col-span-12 mx-auto w-full lg:ps-10 pt-10 lg:col-span-10">
       <div className="relative shadow-lg">
         <Slider {...settings}>
           {slides.map((slide) => (
