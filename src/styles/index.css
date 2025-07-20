@@ -103,7 +103,7 @@
 
   /* ===== 36 ===== */
   .heading-36-bold {
-    @apply font-primary leading-[30px] font-bold tracking-[-0.04em] text-4xl;
+    @apply font-primary text-4xl leading-[30px] font-bold tracking-[-0.04em];
   }
   .heading-36-semibold {
     @apply font-primary text-4xl leading-[48px] font-semibold tracking-[-0.04em];
@@ -117,7 +117,7 @@
 
   /* ===== 32 ===== */
   .heading-32-bold {
-    @apply font-primary text-2xl sm:text-[32px] leading-[30px] font-bold tracking-[-0.04em];
+    @apply font-primary text-2xl leading-[30px] font-bold tracking-[-0.04em] sm:text-[32px];
   }
   .heading-32-semibold {
     @apply font-primary text-[32px] leading-[30px] font-semibold tracking-[-0.04em];
@@ -224,3 +224,4 @@ body {
 .slick-dots li.slick-active div {
   @apply bg-button-2 border-primary scale-125 border;
 }
+
