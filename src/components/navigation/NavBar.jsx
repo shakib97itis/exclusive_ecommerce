@@ -1,9 +1,9 @@
+import { useState, useEffect, useRef } from "react";
 import { CiSearch } from "react-icons/ci";
 import { FiUser } from "react-icons/fi";
 import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
-import { NavLink } from "react-router";
-import { Link } from "react-router";
+import { NavLink, Link } from "react-router";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -12,105 +12,155 @@ const navLinks = [
   { name: "Contact", path: "/contact" },
 ];
 
-const Navbar = () => {
+const NavBar = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const navRef = useRef(null);
+
+  // Close when clicking outside
+  // useEffect(() => {
+  //   const handleClickOutside = (e) => {
+  //     if (navRef.current && !navRef.current.contains(e.target)) {
+  //       setIsNavOpen(false);
+  //     }
+  //   };
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => document.removeEventListener("mousedown", handleClickOutside);
+  // }, []);
+
   return (
-    <nav className="md:border-button/30 relative md:border-b md:pt-12 md:pb-6">
-      <div className="main-container flex flex-wrap items-center justify-between py-4 md:py-0">
-        {/* LOGO */}
-        <Link to="/" className="heading-24-bold text-text-2">
-          Exclusive
-        </Link>
+    <nav className="">
+      <div className="main-container">
+        <div className="border-button/30 border-b">
+          <div className="flex items-center justify-between gap-4 pt-10 pb-4">
+            {/* Logo link */}
+            <div className="flex items-center">
+              <Link to="/" className="heading-24-bold text-text-2">
+                Exclusive
+              </Link>
+            </div>
 
-        <div className="flex space-x-3 md:order-2 md:space-x-0">
-          <div className="flex items-center gap-[20px]">
-            {/* SEARCH BAR */}
-            <form className="hidden lg:block">
-              <label
-                htmlFor="default-search"
-                className="sr-only mb-2 text-sm font-medium text-gray-900"
-              >
-                Search
-              </label>
+            {/* Desktop Nav (hidden on mobile) */}
+            <div className="hidden md:block">
+              <ul className="flex items-center gap-12">
+                {navLinks.map((link) => (
+                  <li key={link.name}>
+                    <NavLink
+                      to={link.path}
+                      className={({ isActive }) =>
+                        `title-16-regular text-text-2 transition ${
+                          isActive ? "title-16-semibold" : "hover:text-text-1"
+                        }`
+                      }
+                    >
+                      {link.name}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              <div className="relative">
-                <div className="absolute inset-y-0 end-0 flex cursor-pointer items-center px-3">
-                  <CiSearch className="text-text-2 h-4 w-4 text-base" />
+            {/* Icons and Search */}
+            <div className="flex items-center gap-4">
+              <div className="hidden lg:block">
+                <div className="relative">
+                  <input
+                    type="search"
+                    placeholder="Search..."
+                    className="bg-secondary title-12-regular rounded border border-none py-2.5 pr-[70px] pl-5 text-sm focus:outline-none"
+                  />
+                  <CiSearch className="text-text-2 absolute top-1/2 right-3 h-6 w-6 -translate-y-1/2" />
                 </div>
-
-                <input
-                  type="search"
-                  id="default-search"
-                  className="title-12-regular bg-secondary block w-full rounded-lg py-3 ps-5 pe-10 focus:outline-0"
-                  placeholder="Search products..."
-                  required
-                />
               </div>
-            </form>
 
-            {/* FAVOURITE */}
-            <div className="">
-              <GrFavorite className="text-text-2 h-6 w-6 cursor-pointer" />
-            </div>
-            {/* CART */}
-            <div className="cart">
-              <IoCartOutline className="text-text-2 h-6 w-6 cursor-pointer" />
-            </div>
-            {/* USER */}
-            <div className="user">
-              <FiUser className="text-text-2 h-6 w-6 cursor-pointer" />
+              <GrFavorite className="h-8 w-8 cursor-pointer text-text-2 hover:text-text-1" />
+
+              <IoCartOutline className="h-8 w-8 cursor-pointer text-text-2 hover:text-text-1" />
+              <FiUser className="h-8 w-8 cursor-pointer text-text-2 hover:text-text-1" />
+
+              {/* Mobile menu button (TODO: WORK ON THE ICON)*/}
+              <button
+                className="rounded-md p-2 text-gray-700 hover:bg-gray-100 focus:outline-none md:hidden"
+                onClick={() => setIsNavOpen(!isNavOpen)}
+                aria-expanded={isNavOpen}
+              >
+                {isNavOpen ? (
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                )}
+              </button>
             </div>
           </div>
 
-          <button
-            data-collapse-toggle="navbar-sticky"
-            type="button"
-            className="inline-flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none md:hidden"
-            aria-controls="navbar-sticky"
-            aria-expanded="false"
+          {/* Mobile menu using CSS Grid animation */}
+          <div
+            ref={navRef}
+            className={`grid transition-[grid-template-rows] duration-300 ease-in-out md:hidden ${
+              isNavOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+            }`}
           >
-            <span className="sr-only">Open main menu</span>
-            <svg
-              className="h-5 w-5"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
-        </div>
+            <div className="overflow-hidden">
+              <div className="space-y-2 pb-4">
+                {navLinks.map((link) => (
+                  <NavLink
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setIsNavOpen(false)}
+                    className={({ isActive }) =>
+                      `block px-3 py-2 title-16-regular text-text-2 ${
+                        isActive
+                          ? "bg-gray-100 title-16-semibold"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                ))}
 
-        <div
-          className="w-full items-center justify-between md:order-1 md:flex md:w-auto"
-          id="navbar-sticky"
-        >
-          <ul className="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-transparent md:p-0 rtl:space-x-reverse">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `title-16-regular text-text-2 block rounded-sm px-3 py-2 text-center hover:font-semibold md:p-0 md:text-left ${
-                      isActive ? "title-16-semibold" : ""
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
+                {/* Mobile search */}
+                <div className="">
+                <div className="relative">
+                  <input
+                    type="search"
+                    placeholder="Search..."
+                    className="bg-secondary w-full title-12-regular rounded border border-none py-2.5 pr-[70px] pl-5 text-sm focus:outline-none"
+                  />
+                  <CiSearch className="text-text-2 absolute top-1/2 right-3 h-6 w-6 -translate-y-1/2" />
+                </div>
+              </div>
+
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;
