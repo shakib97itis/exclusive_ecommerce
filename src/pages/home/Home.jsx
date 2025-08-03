@@ -7,6 +7,10 @@ import FlashSales from "../../features/products/components/freshSales/FreshSales
 import BrowsByCategories from "../../features/products/components/browseByCategories/BrowseByCategories";
 import BestSellingProducts from "../../features/products/components/bestSellingProducts/BestSellingProducts";
 import SalesBanner from "../../features/products/components/salesBanner/SalesBanner";
+import OurProducts from "../../features/products/components/ourProducts/OurProducts";
+import NewArrival from "../../features/products/components/newArrival/newArrival";
+import ServiceSection from "../../components/serviceSection/ServiceSection";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (
@@ -46,6 +50,29 @@ const Home = () => {
         </div>
       </section>
 
+      <section className="">
+        <div className="main-container pb-[70px] pt-[80px] border-b border-button/30">
+          <OurProducts />
+        </div>
+      </section>
+
+      <section className="">
+        <div className="main-container pb-[70px] pt-[80px]">
+          <NewArrival />
+        </div>
+      </section>
+
+      <section className="">
+        <div className="main-container pb-[70px]">
+          <ServiceSection />
+        </div>
+      </section>
+
+      <footer className="">
+        <div className="main-container pb-[70px]">
+          <Footer />
+        </div>
+      </footer>
 
       {/* MAIN CONTENT END */}
     </>
