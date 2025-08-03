@@ -53,12 +53,12 @@ const BrowsByCategories = () => {
         <p>Categories</p>
       </div>
 
-      <div className="mb-10 flex items-center justify-between">
+      <div className="mb-10 space-y-4 sm:space-y-0 sm:flex sm:items-center sm:justify-between">
         <div className="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-20">
           <h2 className="heading-36-semibold">Brows By Categories</h2>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between sm:justify-center gap-2">
           <button
             onClick={goToPrevSlide}
             className="bg-secondary flex h-[46px] w-[46px] cursor-pointer items-center justify-center rounded-full"

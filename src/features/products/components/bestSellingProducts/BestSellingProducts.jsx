@@ -54,7 +54,7 @@ const BestSellingProducts = () => {
         <p>This Months</p>
       </div>
 
-      <div className="mb-10 flex items-center justify-between">
+      <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-center justify-between">
         <div className="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-20">
           <h2 className="heading-36-semibold">Best Selling Products</h2>
         </div>
