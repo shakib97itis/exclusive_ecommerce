@@ -221,7 +221,9 @@ body {
   @apply font-secondary text-base leading-6;
 }
 
+
+/* CUSTOM STYLES FOR REACT SLICK CAROUSEL */
+
 .slick-dots li.slick-active div {
   @apply bg-button-2 border-primary scale-125 border;
 }
-
