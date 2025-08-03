@@ -54,26 +54,29 @@ const FlashSales = () => {
         <p>Today's</p>
       </div>
 
-      <div className="mb-10 flex items-center justify-between">
-        <div className="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-20">
-          <h2 className="heading-36-semibold">Flash Sales</h2>
-          <SalesTimer />
-        </div>
+      <div className="mb-4 md:mb-10 md:flex md:items-center md:gap-10 lg:gap-20">
+        <h2 className="heading-36-semibold mb-3 md:mb-0">Flash Sales</h2>
 
-        <div className="flex items-center gap-2">
-          <button
-            onClick={goToPrevSlide}
-            className="bg-secondary flex h-[46px] w-[46px] cursor-pointer items-center justify-center rounded-full"
-          >
-            <FaArrowLeft className="text-text-2 text-2xl" />
-          </button>
+        <div className="flex grow flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-2.5 md:flex-row md:items-center md:gap-20">
+            <SalesTimer />
+          </div>
 
-          <button
-            onClick={goToNextSlide}
-            className="bg-secondary flex h-[46px] w-[46px] cursor-pointer items-center justify-center rounded-full"
-          >
-            <FaArrowRight className="text-text-2 text-2xl" />
-          </button>
+          <div className="flex items-center justify-between gap-2 sm:justify-center">
+            <button
+              onClick={goToPrevSlide}
+              className="bg-secondary flex h-[46px] w-[46px] cursor-pointer items-center justify-center rounded-full"
+            >
+              <FaArrowLeft className="text-text-2 text-2xl" />
+            </button>
+
+            <button
+              onClick={goToNextSlide}
+              className="bg-secondary flex h-[46px] w-[46px] cursor-pointer items-center justify-center rounded-full"
+            >
+              <FaArrowRight className="text-text-2 text-2xl" />
+            </button>
+          </div>
         </div>
       </div>
 
@@ -82,7 +85,9 @@ const FlashSales = () => {
       </div>
 
       <div className="text-center">
-        <button className="bg-button-2 rounded text-text title-16-medium py-4 px-12">View All Products</button>
+        <button className="bg-button-2 hover:bg-hover-button text-text title-16-medium cursor-pointer rounded px-12 py-4 transition">
+          View All Products
+        </button>
       </div>
     </div>
   );
