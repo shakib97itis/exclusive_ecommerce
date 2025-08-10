@@ -27,37 +27,37 @@ const Home = () => {
       </div>
 
       <section className="">
-        <div className="main-container pb-[60px] border-b border-button/30">
+        <div className="main-container border-button/30 overflow-x-hidden border-b pb-[60px]">
           <FlashSales />
         </div>
       </section>
 
       <section className="">
-        <div className="main-container pb-[70px] pt-[80px] border-b border-button/30">
+        <div className="main-container border-button/30 overflow-x-hidden border-b pt-[80px] pb-[70px]">
           <BrowsByCategories />
         </div>
       </section>
 
       <section className="">
-        <div className="main-container pb-[70px] pt-[80px] border-b border-button/30">
+        <div className="main-container border-button/30 border-b pt-[80px] pb-[70px]">
           <BestSellingProducts />
         </div>
       </section>
 
       <section className="">
-        <div className="main-container pb-[70px] pt-[80px] border-b border-button/30">
+        <div className="main-container border-button/30 border-b pt-[80px] pb-[70px]">
           <SalesBanner />
         </div>
       </section>
 
       <section className="">
-        <div className="main-container pb-[70px] pt-[80px] border-b border-button/30">
+        <div className="main-container border-button/30 overflow-x-hidden border-b pt-[80px] pb-[70px]">
           <OurProducts />
         </div>
       </section>
 
       <section className="">
-        <div className="main-container pb-[70px] pt-[80px]">
+        <div className="main-container pt-[80px] pb-[70px]">
           <NewArrival />
         </div>
       </section>
@@ -68,11 +68,7 @@ const Home = () => {
         </div>
       </section>
 
-      <footer className="">
-        <div className="main-container pb-[70px]">
-          <Footer />
-        </div>
-      </footer>
+      <Footer />
 
       {/* MAIN CONTENT END */}
     </>
