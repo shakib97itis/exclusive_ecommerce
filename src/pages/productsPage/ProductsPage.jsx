@@ -3,13 +3,17 @@ import Header from "../../components/header/Header";
 import NavBar from "../../components/navigation/NavBar";
 import Footer from "../../components/footer/Footer";
 import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
+import SidebarFilter from "../../features/products/components/sidebarFilter/SidebarFilter";
+import OurProductsCard from "../../features/products/components/ourProducts/OurProductsCard";
+
+const products = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const ProductsPage = () => {
   return (
     <>
       <Header />
       <NavBar />
-      <div className="main-container">
+      <div className="main-container pt-20 pb-12">
         <Breadcrumb
           items={[
             { label: "Home", href: "/" },
@@ -22,31 +26,19 @@ const ProductsPage = () => {
         />
       </div>
 
-      <main className="main-container grid grid-cols-[auto_1fr] gap-4">
+      <main className="main-container grid grid-cols-[auto_1fr] gap-20">
         <aside>
-          <div>
-            <h3>Shop by Category</h3>
-          </div>
-          <div>
-            <h3>Shop by Color</h3>
-          </div>
+          <SidebarFilter />
         </aside>
         <section>
-          <div>Show:5</div>
+          <div className="mb-7">Show:5</div>
           {/**
            * TODO: GRID
            */}
-          <div className="grid grid-cols-3">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
-            <div>10</div>
+          <div className="grid grid-cols-3 gap-x-7 gap-y-10">
+            {products.map((product) => (
+              <OurProductsCard key={product} />
+            ))}
           </div>
         </section>
       </main>
