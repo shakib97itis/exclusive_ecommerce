@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import SalesCard from "./SalesCard";
+import ProductCard from "../../../../components/product/ProductCard";
 
 const products = [
   {
@@ -112,7 +112,7 @@ function SalesCardSlider({ settings, sliderRef }) {
         {products.map(() => (
           <div className="px-[15px]">
             <div className="">
-              <SalesCard />
+              <ProductCard />
             </div>
           </div>
         ))}

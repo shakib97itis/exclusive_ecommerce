@@ -1,7 +1,5 @@
-import React from "react";
 import Slider from "react-slick";
 import CategoryCard from "./CategoryCard";
-
 import { GiSmartphone } from "react-icons/gi";
 
 const categories = [
@@ -37,7 +35,7 @@ const categories = [
   },
 ];
 
-function CategorySlider({ settings, sliderRef }) {
+function BrowseByCategorySlider({ settings, sliderRef }) {
   return (
     <div className="-mx-[15px]">
       <Slider ref={sliderRef} {...settings}>
@@ -53,4 +51,4 @@ function CategorySlider({ settings, sliderRef }) {
   );
 }
 
-export default CategorySlider;
+export default BrowseByCategorySlider;

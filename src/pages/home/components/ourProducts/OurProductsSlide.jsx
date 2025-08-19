@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { GiSmartphone } from "react-icons/gi";
 import OurProductsCard from "./OurProductsCard";
+import ProductCard from "../../../../components/product/ProductCard";
 
 const categories = [
   {
@@ -41,9 +42,9 @@ function OurProducstSlide({ settings, sliderRef }) {
     <div className="-mx-[15px]">
       <Slider className="custom-slider" ref={sliderRef} {...settings}>
         {categories.map((category) => (
-          <div className="px-[15px]">
+          <div key={category.id} className="px-[15px]">
             <div className="">
-              <OurProductsCard icon={category.icon} title={category.title} />
+              <ProductCard />
             </div>
           </div>
         ))}

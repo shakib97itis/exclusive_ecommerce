@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import HeroSlide from "./HeroSlide";
 
-import heroImage from "../../assets/images/hero_endframe.png";
+import heroImage from "../../../../assets/images/hero_endframe.png";
 
 const slides = [
   {

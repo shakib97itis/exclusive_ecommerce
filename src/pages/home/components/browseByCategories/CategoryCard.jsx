@@ -1,5 +1,3 @@
-import React from "react";
-
 const CategoryCard = ({ icon: CategoryIcon, title }) => {
   return (
     <div className="group hover:bg-secondary-2 border-text-2/30 flex h-full cursor-pointer flex-col items-center justify-center rounded border px-14 py-6 transition-all hover:border-none">

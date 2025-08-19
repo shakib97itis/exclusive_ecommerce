@@ -1,8 +1,14 @@
-import consoleImage from "../../../../assets/product-images/gamming-console.png";
+import consoleImage from "../../assets/product-images/gamming-console.png";
+
 import { IoHeartOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
+import Ratings from "../common/Ratings";
 
-const BestSellingCard = () => {
+<<<<<<<< HEAD:src/pages/shopPage/ShopCard.jsx
+const ShopCard = () => {
+========
+const ProductCard = () => {
+>>>>>>>> 7443ca583dcdc83e5126a1125695d4b1753ac6f5:src/components/product/ProductCard.jsx
   return (
     <div className="w-full overflow-hidden">
       {/* Product Image Placeholder - Responsive height */}
@@ -23,7 +29,7 @@ const BestSellingCard = () => {
         </div>
 
         {/* ADD TO CART BUTTON */}
-        <button className="bg-button hover:bg-button/80 title-16-medium absolute bottom-0 w-full translate-y-[110%] cursor-pointer rounded-b px-3 py-2 text-white transition-all duration-300 group-hover:translate-y-0">
+        <button className="bg-button hover:bg-button/80 title-16-medium absolute bottom-0 w-full md:translate-y-[110%] cursor-pointer rounded-b px-3 py-2 text-white transition-all duration-300 group-hover:translate-y-0">
           Add to Cart
         </button>
       </div>
@@ -43,12 +49,13 @@ const BestSellingCard = () => {
         </div>
 
         {/* Ratings - Responsive sizing */}
-        <Ratings />
+        <Ratings reviewCount={10} maxRating={5} rating={3} />
       </div>
     </div>
   );
 };
 
+<<<<<<<< HEAD:src/pages/shopPage/ShopCard.jsx
 const Ratings = ({ reviewCount }) => {
   return (
     <div className="flex items-center">
@@ -70,4 +77,7 @@ const Ratings = ({ reviewCount }) => {
   );
 };
 
-export default BestSellingCard;
+export default ShopCard;
+========
+export default ProductCard;
+>>>>>>>> 7443ca583dcdc83e5126a1125695d4b1753ac6f5:src/components/product/ProductCard.jsx
