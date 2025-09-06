@@ -1,8 +1,11 @@
 import Header from "../../components/header/Header";
 import NavBar from "../../components/navigation/NavBar";
 import Footer from "../../components/footer/Footer";
+
 import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
+
 import SidebarFilter from "./components/sidebarFilter/SidebarFilter";
+
 import ProductCard from "../../components/product/ProductCard";
 import { useState } from "react";
 import Pagination from "../../components/pagination/Pagination";

@@ -4,11 +4,7 @@ import { IoHeartOutline } from "react-icons/io5";
 import { IoEyeOutline } from "react-icons/io5";
 import Ratings from "../common/Ratings";
 
-<<<<<<<< HEAD:src/pages/shopPage/ShopCard.jsx
-const ShopCard = () => {
-========
 const ProductCard = () => {
->>>>>>>> 7443ca583dcdc83e5126a1125695d4b1753ac6f5:src/components/product/ProductCard.jsx
   return (
     <div className="w-full overflow-hidden">
       {/* Product Image Placeholder - Responsive height */}
@@ -55,29 +51,4 @@ const ProductCard = () => {
   );
 };
 
-<<<<<<<< HEAD:src/pages/shopPage/ShopCard.jsx
-const Ratings = ({ reviewCount }) => {
-  return (
-    <div className="flex items-center">
-      <div className="flex text-yellow-400">
-        {[...Array(5)].map((_, i) => (
-          <svg
-            key={i}
-            className="h-4 w-4 fill-current sm:h-5 sm:w-5"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-          </svg>
-        ))}
-      </div>
-      <span className="ml-1 text-xs text-gray-600 sm:text-sm">
-        ({reviewCount} reviews)
-      </span>
-    </div>
-  );
-};
-
-export default ShopCard;
-========
 export default ProductCard;
->>>>>>>> 7443ca583dcdc83e5126a1125695d4b1753ac6f5:src/components/product/ProductCard.jsx

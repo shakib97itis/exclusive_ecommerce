@@ -1,15 +1,15 @@
 import Header from "../../components/header/Header";
 import NavBar from "../../components/navigation/NavBar";
-import HeroSection from "./components/heroSection/HeroSection";
+import Footer from "../../components/footer/Footer";
 
+import HeroSection from "./components/heroSection/HeroSection";
 import FlashSales from "./components/flashSales/FlashSales";
 import BrowsByCategories from "./components/browseByCategories/BrowseByCategories";
+import BestSellingProducts from "./components/bestSellingProducts/BestSellingProducts";
 import SalesBanner from "./components/salesBanner/SalesBanner";
 import OurProducts from "./components/ourProducts/OurProducts";
 import NewArrival from "./components/newArrival/newArrival";
 import ServiceSection from "./components/serviceSection/ServiceSection";
-import Footer from "../../components/footer/Footer";
-import BestSellingProducts from "./components/bestSellingProducts/BestSellingProducts";
 
 const Home = () => {
   return (
